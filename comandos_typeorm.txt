@@ -1,0 +1,18 @@
+no comando do terminal o caminho utiliza src/migrations
+no data-source não utilizamos o ./src, utilizamos apenas ./migrations ou ./entities
+
+
+comando para gerar a migração:
+npm run typeorm migration:generate src/migrations/InitialMigration -- -d src/data-source
+
+comando para executar as migrações:
+npm run typeorm migration:run -- -d src/data-source
+
+comando para reverter a migração:
+ npm run typeorm migration:revert -- -d src/data-source
+
+comando para incluir a migração:
+ npm run typeorm migration:generate -- -d src/data-source src/migrations/include(nomedamigracao fora do parenteses)Column(nomedaDataBase)
+
+se estiver usando npm não esquecer do --
+se estiver usando yarn não precisa do --
