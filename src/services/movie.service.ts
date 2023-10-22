@@ -15,8 +15,8 @@ export const readMovieService = async ({nextPage, page, perPage, prevPage, sort,
 
     const [ movies, count ] = await movieRepo.findAndCount({
         order: {[sort]: order},
-        skip: page,
-        take: perPage,
+        skip: page,  // offset - qual a pag que usuario quer ver 
+        take: perPage, // limit - quantidade por pagina 
     });
     
     return {
